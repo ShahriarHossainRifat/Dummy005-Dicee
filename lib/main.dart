@@ -18,7 +18,7 @@ class DicePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var LeftButtonImage = 6;
+    int LeftButtonImage = 2;
     return Center(
       child: Row(
         children: [
