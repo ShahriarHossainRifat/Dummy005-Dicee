@@ -5,10 +5,11 @@ void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     home: Scaffold(
-      backgroundColor: Colors.red,
+      backgroundColor: Colors.grey[800],
       appBar: AppBar(
         title: Text('Dicee'),
-        backgroundColor: Colors.red,
+        centerTitle: true,
+        backgroundColor: Colors.grey[900],
       ),
       body: DicePage(),
     ),
@@ -16,19 +17,19 @@ void main() {
 }
 
 class DicePage extends StatefulWidget {
-  const DicePage({Key? key}) : super(key: key);
+  DicePage({Key? key}) : super(key: key);
 
   @override
   State<DicePage> createState() => _DicePageState();
 }
 
 class _DicePageState extends State<DicePage> {
-  int leftDiceImageNumber = 1;
-  int rightDiceImageNumber = 1;
+  int leftDiceNumber = 1;
+  int rightDiceNumber = 1;
   void randomizeDice() {
     setState(() {
-      leftDiceImageNumber = Random().nextInt(6) + 1;
-      rightDiceImageNumber = Random().nextInt(6) + 1;
+      leftDiceNumber = Random().nextInt(6) + 1;
+      rightDiceNumber = Random().nextInt(6) + 1;
     });
   }
 
@@ -39,7 +40,7 @@ class _DicePageState extends State<DicePage> {
         children: [
           Expanded(
             child: TextButton(
-              child: Image.asset('images/dice$leftDiceImageNumber.png'),
+              child: Image.asset('images/dice$leftDiceNumber.png'),
               onPressed: () {
                 randomizeDice();
               },
@@ -47,7 +48,7 @@ class _DicePageState extends State<DicePage> {
           ),
           Expanded(
             child: TextButton(
-              child: Image.asset('images/dice$rightDiceImageNumber.png'),
+              child: Image.asset('images/dice$rightDiceNumber.png'),
               onPressed: () {
                 randomizeDice();
               },
