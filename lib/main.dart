@@ -40,6 +40,9 @@ class _DicePageState extends State<DicePage> {
         children: [
           Expanded(
             child: TextButton(
+              style: TextButton.styleFrom(
+                splashFactory: NoSplash.splashFactory,
+              ),
               child: Image.asset('images/dice$leftDiceNumber.png'),
               onPressed: () {
                 randomizeDice();
@@ -48,6 +51,9 @@ class _DicePageState extends State<DicePage> {
           ),
           Expanded(
             child: TextButton(
+              style: TextButton.styleFrom(
+                splashFactory: NoSplash.splashFactory,
+              ),
               child: Image.asset('images/dice$rightDiceNumber.png'),
               onPressed: () {
                 randomizeDice();
